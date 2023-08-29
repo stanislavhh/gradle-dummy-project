@@ -14,8 +14,9 @@ plugins {
 
 sonar {
   properties {
-    property "sonar.projectKey", "dummy-java-project"
-    property "sonar.projectName", "dummy-java-project"
+    property "sonar.projectKey", "7PH_sonar-dummy-gradle-project_AYpBctDyer3zKKv4do38"
+    property "sonar.projectName", "sonar-dummy-gradle-project"
+    property "sonar.projectVersion", "1.0-SNAPSHOT"
   }
 }
 
