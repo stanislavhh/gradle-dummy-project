@@ -12,6 +12,7 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
+    permissions: read-all
     steps:
       - uses: actions/checkout@v2
         with:
@@ -34,7 +35,6 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
       - name: Build and analyze
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=7PH_sonar-dummy-gradle-project_AYpBctDyer3zKKv4do38 -Dsonar.projectName='sonar-dummy-gradle-project' -Dsonar.projectVersion=1.0-SNAPSHOT
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=7PH_sonar-dummy-gradle-project_AYpBctDyer3zKKv4do38 -Dsonar.projectName='sonar-dummy-gradle-project'
