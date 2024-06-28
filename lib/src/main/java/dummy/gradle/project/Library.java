@@ -12,3 +12,5 @@ public class Library {
         return false;
     }
 }
+
+// ToDo make a code smell
